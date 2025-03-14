@@ -1,0 +1,36 @@
+ Roll No: 35
+-- Name:MUHSINA
+-- Program:
+-- 
+
+
+--
+-- Table structure for table departments
+
+create table departments(dno int primary key,dname varchar(50) not null); 
+
+
+-- Table structure for table departments
+
+create table bookissues(bookid int,studentid int,issue_date date,return_date date,fine decimal(5,2) default 0.00);
+
+
+--Table structure for table students
+
+alter table students drop column course;
+alter table students add dno int;
+alter table students add constraint students_fkey_dno foreign key(dno) references departments(dno);
+
+
+-- Dumping data for table <table_name>
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+insert into departments value(1,'MCA');
+
+--insert into bookissues values(2, 101, '2025-02-10', NULL, 0.00),(1, 102, '2025-02-12', '2025-02-18', 0.00);
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
